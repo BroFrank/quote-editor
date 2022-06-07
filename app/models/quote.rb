@@ -3,5 +3,5 @@ class Quote < ApplicationRecord
 
   scope :ordered, -> { order(id: :desc) }
 
-  broadcast_to ->(quote) { "quotes" }, inserts_by: :prepend
+  broadcasts_to ->(quote) { "quotes" }, inserts_by: :prepend
 end
